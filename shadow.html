@@ -1,0 +1,44 @@
+<html>
+<head>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #aaa;
+      font-family: Poiret One;
+    }
+
+    div#my {
+          background: linear-gradient(-45deg, #bbb 0%, transparent 10%);
+          display: block;
+          width: 200px;
+          height: 200px;
+          background-color: #eee;
+          border: 1px solid #aaa;
+          position: absolute;
+          /*box-shadow: 0px 0px 0px #fff, 0px -5px 10px #888;*/
+          top: 100px;
+          left: 100px;
+    }
+
+    div#my:after{
+      box-shadow: 8px 12px 10px rgba(0, 0, 0, 0.7);
+      position:absolute;
+      content:'';
+      background:transparent;
+      bottom:10px;
+      right:9px;
+      width:70%;
+      height:70%;
+      transform: rotate(5deg) skew(10deg);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div id="my"></div>
+</body>
+</html>

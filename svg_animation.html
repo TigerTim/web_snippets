@@ -1,0 +1,65 @@
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="//cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
+  <script>
+
+    $('document').ready( function() {
+
+
+      var render = function(){
+        var r = document.getElementById('results');
+        r.innerHTML = '';
+        var svg =
+          '<path d="M10 10 L50 70 L10 150 L40 150 L80 70 L40 10 L10 10"  stroke="#006567" stroke-width="3" fill="#006567"/>' +
+          '<path d="M130 10 L80 120 L130 200 L160 200 L110 120 L160 10 L130 10" stroke="#CFDC00" stroke-width="3" fill="#CFDC00"/>' +
+          '<path d="M10 10 L80 120" stroke="#ddd" stroke-width= "2" fill="none"></path>'
+
+
+
+        var svgItem = document.createElementNS('http://www.w3.org/2000/svg','svg');
+        svgItem.setAttribute('height', '400px')
+        svgItem.setAttribute('width', '400px')
+        svgItem.id = 'my-svg';
+        svgItem.innerHTML = svg
+        // x = document.createElement('path')
+        // x.setAttribute('d','M10 10 L80 120')
+        // x.setAttribute('stroke','#ddd')
+        // x.setAttribute('stroke-width','2')
+        // x.setAttribute('fill','none')
+        // svgItem.appendChild(x)
+
+        r.appendChild(svgItem);
+        new Vivus(svgItem.id, {type: 'async', duration: 100}, function(obj){
+          obj.el.classList.add('finished');
+        });
+      }
+
+      render();
+
+    });
+
+  </script>
+  <style type="text/css">
+
+    svg * {
+      fill-opacity: 0;
+      transition: fill-opacity 1.5s;
+    }
+
+    svg.finished * {
+      fill-opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <img width="200" height="200" src="https://www.xing.com/img/n/xing_icon_apple.png" /><br>
+  <div id='results'></div>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <script>
+
+    $('document').ready( function() {
+
+
+    });
+
+  </script>
+  <style type="text/css">
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #aaa;
+      font-family: Poiret One;
+    }
+
+    .menu {
+      color: #ddd;
+      list-style: none;
+      padding: 50px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    .main .sub {
+      transition: height 1s, opacity 1s ease-out;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      margin-left: 5px;
+    }
+
+    .main:hover .sub {
+      opacity: 1;
+      height: 50px;
+    }
+
+    .sub {
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <ul class='menu'>
+    <li class="main">Home</li>
+    <li class="main">Content
+      <ul>
+        <li class="sub">Content 1</li>
+      </ul>
+    </li>
+    <li class="main">About</li>
+  </ul>
+
+</body>
+</html>
