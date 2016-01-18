@@ -1,0 +1,351 @@
+/*
+ *= require_self
+ *= require jqplot
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  height: 95%;
+}
+
+body{
+  background-color: hsl(0,0%,20%);
+  font-family: sans-serif;
+  text-align: left;
+  color: hsl(0,0%,80%);
+  margin: 10px 10px;
+}
+
+table {
+  padding: 30px;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border: 0px solid hsl(0,0%,80%) !important;
+  margin: 4px 10px;
+}
+
+td, th {
+  padding: 2px 5px;
+}
+
+li {
+  list-style: none;
+  padding: 1px;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+h3, h4 {
+  padding: 0px;
+  margin: 0px;
+}
+
+label {
+  color: hsl(0,0%,80%);
+}
+
+form {
+  padding: 9px 34px 14px 34px;
+}
+
+input {
+  line-height: 20px;
+}
+
+table, tr td{
+  border: 0px solid hsl(0,0%,40%);
+  border-collapse: collapse;
+}
+
+td {
+  padding: 3px 5px;
+}
+
+a {
+  color: hsl(0,0%,80%);
+}
+
+table.list tr:nth-child(even) {
+  background: hsl(0, 0%, 20%)
+}
+
+table.list tr:nth-child(odd) {
+  background: hsl(0, 0%, 25%)
+}
+
+div#iframe {
+  padding-top: 50px;
+  text-align: center;
+  height: 100%;
+}
+
+/* the menue start */
+nav {
+  float: left;
+  ul {
+    padding: 8px 0px;
+    margin: 0px;
+    background-color: hsl(0,0%,20%);
+    li {
+      list-style: none;
+      float:left;
+      p {
+        color: hsl(0,0%,80%);
+        padding: 2px 10px 14px 5px;
+        margin: 0px;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        color: hsl(0,0%,80%);
+        padding: 2px 5px;
+        border-left: solid 1px hsl(0,0%,80%);
+      }
+      ul{
+        display: inline;
+        visibility: hidden;
+        position: absolute;
+        padding: 0px;
+        opacity: 0.9;
+        li{
+          float: none;
+          min-width: 100px;
+          text-align: left;
+          a {
+            border-left: none;
+            padding: 6px 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav {
+  float: left;
+}
+nav  ul {
+  padding: 8px 0px;
+  margin: 0px;
+  background-color: hsl(0,0%,20%);
+}
+nav ul li {
+  list-style: none;
+  float:left;
+}
+nav ul li p {
+  color: hsl(0,0%,80%);
+  padding: 2px 10px 14px 5px;
+  margin: 0px;
+}
+nav ul li a {
+  text-decoration: none;
+  display: block;
+  color: hsl(0,0%,80%);
+  padding: 2px 5px;
+  border-left: solid 1px hsl(0,0%,80%);
+}
+nav ul li ul{
+  display: inline;
+  visibility: hidden;
+  position: absolute;
+  padding: 0px;
+  opacity: 0.9;
+}
+nav ul li ul li{
+  float: none;
+  min-width: 100px;
+  text-align: left;
+}
+nav ul li ul li a {
+  border-left: none;
+  padding: 6px 5px;
+}
+
+nav ul:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+nav ul li:hover > ul {
+    visibility: visible;
+}
+nav ul li ul li a:hover{
+    color: hsl(0,0%,100%);
+}
+nav ul li a:hover{
+    color: hsl(0,0%,100%);
+}
+/* the menue end */
+
+a:hover {
+  color: hsl(0,0%,60%);
+}
+
+#event_data {
+  display: none;
+}
+
+#data {
+  display: none;
+  width: 83%;
+}
+
+.graph {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.graph-kl {
+  position: relative;
+  height:200px;
+  width:600px;
+}
+
+.graph-gr {
+  position: relative;
+  height: 300px;
+  width: 95%;
+}
+
+.active {
+  color: hsl(0,0%,60%);
+}
+
+.jqplot-highlighter-tooltip {
+  color: #000;
+  background: #fff !important;
+}
+
+.with_borders{
+  margin: 10px 5px;
+}
+
+.with_borders td, th{
+  border: 1px solid hsl(0, 0%, 40%) !important;
+  padding: 2px 5px;
+}
+
+.border_left {
+  border-left: 1px solid hsl(0, 0%, 40%) !important;
+}
+
+.ml-20  { margin-left  : 20px;  }
+
+.ml-5   { margin-left  : 5px;   }
+
+.mr-5   { margin-right : 5px;   }
+
+.mt-40  { margin-top   : 40px;  }
+
+.mt-20  { margin-top   : 20px;  }
+
+.pt-40  { padding-top  : 40px;  }
+
+.ml-260 { margin-left  : 260px; }
+
+.pl-260 { padding-left : 260px; }
+
+.pr-10  { padding-right: 10px;  }
+
+.pl-20  { padding-left : 20px;  }
+
+.pl-5   { padding-left : 5px;   }
+
+.button {
+  border: none;
+  border-radius: 3px;
+  height: 26px;
+  background-color: hsl(0,0%,80%);
+  top: 1px;
+  font-size: 100%;
+}
+
+.flash-notice {
+  background-color: #55c15e;
+  padding: 10px;
+  margin: 0px auto;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.fl-right {
+  float: right;
+}
+
+.fl-left {
+  float: left;
+}
+
+.disp-inl-block {
+  display: inline-block;
+}
+
+.show_links {
+  border: 5px solid green !important;
+  display: inline-block !important;
+}
+
+.overlay {
+  display: block;
+  color: #000;
+}
+
+.box {
+  margin-right: 40px;
+}
+
+.section {
+  color: hsl(203.7,50%,60%);
+}
+
+#header {
+  display: flex;
+  margin: 20px 5px;
+  justify-content: left;
+}
+
+#header div {
+  margin-left: 20px;
+}
+
+div.section {
+  display: flex;
+  xjustify-content: space-around;
+  background-color: hsl(0,0%,25%);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px hsl(0,0%,15%);
+  width:600px;
+  margin-top: 40px;
+  padding: 10px 10px;
+}
+
+
+div.section form{
+  padding: 0px 0px;
+}
+
+div.section p {
+  margin: 5px 0px;
+}
+
+div.section input[type='submit'] {
+  margin-top: 5px;
+  padding: 0px 5px;
+  position: relative;
+  display: block;
+}
+
